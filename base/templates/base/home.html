@@ -1,0 +1,13 @@
+{% include 'main.html' %}
+
+{% block content %}
+    <h1>Welcome back its home page</h1>
+    <div>
+        {% for room in rooms %}
+            <div>
+{#                <h3>{{ room.id }} ------- <a href="/room/{{ room.id }}">{{ room.name }}</a></h3>#}
+                <h3>{{ room.id }} ------- <a href="{% url 'room' room.id %}">{{ room.name }}</a></h3>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

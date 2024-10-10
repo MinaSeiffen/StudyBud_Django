@@ -18,9 +18,11 @@
             </div>
           </div>
           <div class="profile__info">
-            <h3>{{ request.user }}</h3>
-            <p>@{{ request.user }}</p>
-            <a href="edit-user.html" class="btn btn--main btn--pill">Edit Profile</a>
+            <h3>{{ user.username }}</h3>
+            <p>@{{ user.username }}</p>
+            {% if request.user == user %}
+                <a href="{% url 'edit-user' %}" class="btn btn--main btn--pill">Edit Profile</a>
+            {% endif %}
           </div>
           <div class="profile__about">
             <h3>About</h3>
